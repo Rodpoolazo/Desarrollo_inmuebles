@@ -1,0 +1,19 @@
+<h1>Realtys#index</h1>
+<p>Find me in app/views/realtys/index.html.erb</p>
+
+<% @realtys.each do |realty| %>
+  <%= realty.commune_id %>
+  <%= realty.number_unit %>
+  <%= realty.unit_state %>
+  <%= realty.street_type_id %>
+  <%= realty.population_villa %>
+  <%= realty.condominium_id %>
+  <%= realty.property_type %>
+  <%= realty.aplle %>
+  <%= realty.property %>
+  <%= realty.name_realty %>
+  <%= realty.latitude %>
+  <%= realty.longitude %>
+  <%= realty.mt2_land %>
+  <%= realty.mt2_built %>
+<% end %>
