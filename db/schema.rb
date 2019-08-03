@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_03_145216) do
+ActiveRecord::Schema.define(version: 2019_08_03_181950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "communes", force: :cascade do |t|
+    t.string "name"
+    t.integer "province_id"
+    t.integer "region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cod_treasury"
+    t.integer "conara_sii"
+  end
+
+  create_table "consumptions", force: :cascade do |t|
+    t.bigint "service_account_id"
+    t.bigint "realty_id"
+    t.string "date"
+    t.string "start_reading"
+    t.string "final_reading"
+    t.float "unit_consumption"
+    t.integer "consumption_amount"
+    t.integer "total_debt"
+    t.string "agreement"
+    t.integer "unpaid_months"
+    t.string "last_payment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["realty_id"], name: "index_consumptions_on_realty_id"
+    t.index ["service_account_id"], name: "index_consumptions_on_service_account_id"
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.integer "region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "realties", force: :cascade do |t|
     t.integer "commune_id"
@@ -33,6 +68,13 @@ ActiveRecord::Schema.define(version: 2019_08_03_145216) do
     t.float "mt2_built"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "number_region"
   end
 
   create_table "service_accounts", force: :cascade do |t|
@@ -58,4 +100,6 @@ ActiveRecord::Schema.define(version: 2019_08_03_145216) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "consumptions", "realties"
+  add_foreign_key "consumptions", "service_accounts"
 end

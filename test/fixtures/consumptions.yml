@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_account: one
+  realty: one
+  date: MyString
+  start_reading: MyString
+  final_reading: MyString
+  unit_consumption: 1.5
+  consumption_amount: 1
+  total_debt: 1
+  agreement: MyString
+  unpaid_months: 1
+  last_payment: MyString
+
+two:
+  service_account: two
+  realty: two
+  date: MyString
+  start_reading: MyString
+  final_reading: MyString
+  unit_consumption: 1.5
+  consumption_amount: 1
+  total_debt: 1
+  agreement: MyString
+  unpaid_months: 1
+  last_payment: MyString
