@@ -1,5 +1,6 @@
 class ServiceAccount < ApplicationRecord
  has_many :consumptions
- has_many :realtys, through: :consumptions
+ has_many :realties, through: :consumptions
 
 end
+  
