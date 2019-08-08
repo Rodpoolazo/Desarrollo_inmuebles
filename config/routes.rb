@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :realtys, only: :index
-  root to: 'realtys#index'
+  resources :realties, only: :index
+  root to: 'realties#index'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
