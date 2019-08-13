@@ -15,6 +15,8 @@ gem 'cancancan'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+# Use para ver diagrama pdf
+gem 'rails-erd', require: false, group: :development
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
